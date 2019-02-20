@@ -6,14 +6,45 @@
     <title>
         {% block title %} {% endblock %}
     </title>
+        
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 </head>
 <body>
-    {% include 'header.html' %}
-    {% block headmessage %} {% endblock %}
-    <hr>
-    {% block content %} {% endblock %}
-    <hr>
-    {% include 'footer.html' %}
+    <div class='container-fluid'>
+        {% include 'header.html' %}
+        <div class='row'>
+            <div class='col-sm-4 col-md-4'>
+                <div class='panel panel-default'>
+                    <div class='panel-heading'>
+                        <h3>
+                            MENU
+                        </h3>
+                    </div>
+                    <div class='panel-body'>
+                        <div class='list-group'>
+                            <a href='/' class='list-group-item'>HOME</a>
+                            <a href='http://www.baidu.com' class='list-group-item'>即时新闻</a>
+                            <a href='http://nba.hupu.com' class='list-group-item'>电视新闻</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class='col-sm-8 col-md-8'>
+                <div class='panel panel-default'>
+                    <div class='panel-heading'>
+                        {% block headmessage %} {% endblock %}
+                    </div>
+                    <div class='panel-body'>
+                        {% block content %} {% endblock %}
+                    </div>
+                    <div class='panel-footer'>
+                        {% include 'footer.html' %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
 
